@@ -1,0 +1,25 @@
+<section class="section-parent-container">
+  @if (workout) {
+  <h2>{{ workout.description }}</h2>
+  <p>Total sets: {{ getTotalOfSet() }}</p>
+  <p>Total tons: {{ getTotalTons() }}</p>
+  <mat-accordion>
+    @for(exercise of workout.exercises; track exercise.name) {
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ exercise.name }}
+        </mat-panel-title>
+        <mat-panel-description>Total: {{ totalTon(exercise) }}</mat-panel-description>
+      </mat-expansion-panel-header>
+      @for(execution of exercise.executions; track execution.order) {
+      <p>Reps:{{ execution.reps }}, Weight: {{ execution.weight }}</p>
+      }
+    </mat-expansion-panel>
+    }
+  </mat-accordion>
+  }
+
+  <button mat-stroked-button (click)="onBack()">Go To Init</button>
+
+</section>

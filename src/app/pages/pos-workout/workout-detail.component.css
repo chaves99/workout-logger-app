@@ -1,0 +1,14 @@
+section {
+  width: 80%;
+  margin: auto;
+  padding-top: 30px;
+}
+
+mat-accordion {
+  margin-top: 20px;
+}
+
+button {
+  width: 100%;
+  margin-top: 50px;
+}

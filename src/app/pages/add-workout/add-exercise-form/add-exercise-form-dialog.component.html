@@ -1,0 +1,22 @@
+<h3 style="text-align: center;">Add Exercise</h3>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+  <mat-dialog-content>
+    <mat-form-field style="width: 100%;">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+    <mat-form-field style="width: 48%;">
+      <mat-label>Reps</mat-label>
+      <input matInput type="number" formControlName="reps">
+    </mat-form-field>
+    <mat-form-field style="width: 48%; float: right;">
+      <mat-label>Weight</mat-label>
+      <input matInput type="number" formControlName="weight">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="button" (click)="onBackClick()">Back</button>
+    <button mat-button type="submit" cdkFocusInitial>Ok</button>
+  </mat-dialog-actions>
+</form>

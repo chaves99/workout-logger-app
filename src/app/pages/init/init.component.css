@@ -1,0 +1,32 @@
+section {
+  padding-top: 40px;
+  width: 80%;
+  margin: auto;
+}
+
+.title {
+  display: flex;
+}
+
+.title button {
+  position: sticky;
+  margin-right: 0;
+  width: fit-content;
+}
+
+mat-card {
+  margin-bottom: 10px;
+}
+
+button {
+  width: 70%;
+  margin: auto;
+}
+
+.button-container {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 50px;
+}

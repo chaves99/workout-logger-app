@@ -1,0 +1,10 @@
+<mat-dialog-content>
+  <h2>Description/Name</h2>
+  <mat-form-field>
+    <input matInput placeholder="Ex. Chest" [(ngModel)]="description">
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button [mat-dialog-close]="description"> Ok </button>
+</mat-dialog-actions>

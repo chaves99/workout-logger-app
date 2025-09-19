@@ -1,0 +1,20 @@
+.title-block {
+  text-align: center;
+}
+
+.workout-form {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.add-button {
+  position: absolute;
+  left: 15px;
+  bottom: 15px;
+}
+
+.finish-button {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
