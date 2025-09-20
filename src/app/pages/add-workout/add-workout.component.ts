@@ -1,17 +1,17 @@
 
+import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit, } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { WorkoutHolderService, WorkoutService } from '../../services';
-import { ExecutionRequest, ExerciseRequest } from '../../core';
-import { AddExerciseFormDialogComponent } from './add-exercise-form/add-exercise-form-dialog.component';
+import { MatListModule } from '@angular/material/list';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DatePipe } from '@angular/common';
+import { ExecutionRequest, ExerciseRequest } from '../../core';
+import { WorkoutHolderService, WorkoutService } from '../../services';
+import { AddExerciseFormDialogComponent } from './add-exercise-form/add-exercise-form-dialog.component';
 
 
 @Component({
@@ -52,7 +52,7 @@ export class AddWorkoutComponent implements OnInit {
 
   openExerciseDialog(): void {
     this.exerciseDialog
-      .open(AddExerciseFormDialogComponent, {})
+      .open(AddExerciseFormDialogComponent, { position: {top: '5rem'}})
       .afterClosed()
       .subscribe((result?: ExerciseRequest) => {
         if (result !== undefined) {

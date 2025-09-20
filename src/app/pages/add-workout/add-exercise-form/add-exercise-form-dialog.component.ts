@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, ElementRef, inject, OnInit, ViewChild, viewChild } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import {
   MAT_DIALOG_DATA,
@@ -28,6 +28,8 @@ export class AddExerciseFormDialogComponent implements OnInit {
 
   private readonly snackBar = inject(MatSnackBar);
 
+  @ViewChild("inputName") inputName?: ElementRef;
+
   // data = inject(MAT_DIALOG_DATA);
 
   data: {exercise: ExerciseRequest, order: number} = inject(MAT_DIALOG_DATA);
@@ -44,6 +46,8 @@ export class AddExerciseFormDialogComponent implements OnInit {
   readonly dialogRef = inject(MatDialogRef<AddExerciseFormDialogComponent>);
 
   ngOnInit(): void {
+    if (this.inputName)
+      this.inputName.nativeElement.focus();
     if (this.isEditing()) {
       const execution = this.data.exercise.executions.find(e => e.order === this.data.order)
       if (execution) {

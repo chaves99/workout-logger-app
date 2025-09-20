@@ -1,24 +1,25 @@
-<div class="title-block">
-  <h1>{{ description }}</h1>
-  <h4> {{ begining | date:'MMM d, h:mm a' }} </h4>
-</div>
-<form class="workout-form" (ngSubmit)="submit()">
-  <div>
-    <mat-list>
-      @for (exercise of exercises; track exercise.name) {
-        <div mat-subheader>{{exercise.name}}</div>
-        @for(execution of exercise.executions; track execution.order) {
-          <mat-list-item (click)="onListItemClick(exercise, execution.order)">
-            Order: {{execution.order}}, Reps: {{ execution.reps }}, Weight: {{ execution.weight }}
-          </mat-list-item>
-        }
-        <mat-divider></mat-divider>
-      }
-    </mat-list>
+<section class="container-section">
+  <div class="title-block">
+    <h1>{{ description }}</h1>
+    <h4> {{ begining | date:'MMM d, h:mm a' }} </h4>
   </div>
 
-  <button class="add-button" type="button" mat-stroked-button (click)="openExerciseDialog()">Add</button>
+  <form class="workout-form" (ngSubmit)="submit()">
+    <div>
+      <mat-list>
+        @for (exercise of exercises; track exercise.name) {
+          <div mat-subheader>{{exercise.name}}</div>
+          @for(execution of exercise.executions; track execution.order) {
+            <mat-list-item (click)="onListItemClick(exercise, execution.order)">
+              Order: {{execution.order}}, Reps: {{ execution.reps }}, Weight: {{ execution.weight }}
+            </mat-list-item>
+          }
+          <mat-divider></mat-divider>
+        }
+      </mat-list>
+    </div>
 
-  <button class="finish-button" mat-stroked-button type="submit">Finish</button>
-
-</form>
+    <button class="add-button" type="button" mat-stroked-button (click)="openExerciseDialog()">Add</button>
+    <button class="finish-button" mat-stroked-button type="submit">Finish</button>
+  </form>
+</section>
