@@ -1,5 +1,5 @@
 {
-  "name": "ng-demo",
+  "name": "workout-logger-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",

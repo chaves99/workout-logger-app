@@ -2,7 +2,7 @@
 <section class="section-parent-container">
   <div class="title">
     <h2>Latest workouts</h2>
-    <button mat-button>See All</button>
+    <button (click)="onSeeAll()" mat-button>See All</button>
   </div>
     @for(workout of workoutResponse; track workout.id) {
       <mat-card appearance="outlined">

@@ -6,7 +6,7 @@ import { WorkoutHolderService, WorkoutService } from '../../services';
 import { ExerciseResponse, title, WorkoutResponse } from '../../core';
 import { MatListModule } from '@angular/material/list';
 import { DatePipe } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { WorkoutDecriptionFormDialogComponent } from './workout-decription-form-dialog/workout-decription-form-dialog.component';
 
@@ -18,6 +18,7 @@ import { WorkoutDecriptionFormDialogComponent } from './workout-decription-form-
     MatListModule,
     MatCardModule,
     DatePipe,
+    RouterLink,
   ],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css'
@@ -74,6 +75,10 @@ export class InitComponent implements OnInit {
   public onSeeMore(workout: WorkoutResponse): void {
     this.workoutHolderService.hold(workout);
     this.router.navigate(['workout-detail']);
+  }
+
+  public onSeeAll(): void {
+    this.router.navigate(['history']);
   }
 
 }
