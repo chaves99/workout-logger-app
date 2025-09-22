@@ -10,7 +10,7 @@ export class WorkoutService {
   private readonly url = environment.serviceUrl + '/workout';
 
   public getByUser(id: number): Observable<WorkoutResponse[]> {
-    return this.http.get<WorkoutResponse[]>(this.url, { headers: { "user": id.toString() } });
+    return this.http.get<WorkoutResponse[]>(this.url);
   }
 
   public getPagedByUser(page: number, size: number): Observable<Page<WorkoutResponse>> {

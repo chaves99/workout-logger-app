@@ -1,0 +1,31 @@
+
+.title {
+  padding-left: 15px;
+  padding-right: 15px;
+  vertical-align: middle;
+}
+
+h2 {
+  display: inline-block;
+}
+
+.title button {
+  vertical-align: middle;
+  right: 0px;
+}
+
+section {
+  padding: 1rem;
+}
+
+.workout-card {
+  margin-bottom: 1rem;
+}
+
+footer {
+  position: fixed;
+  bottom: 5px;
+  width: 100%;
+  align-content: center;
+}
+

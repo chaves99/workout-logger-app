@@ -1,5 +1,19 @@
+<div class="title">
+  <h2>History</h2>
+  <button mat-button (click)="onGoBack()">Go Back</button>
+</div>
+
+<section>
+    @for(workout of currentWorkouts; track workout.id) {
+      <div class="workout-card">
+        <app-workout-card [workout]="workout"></app-workout-card>
+      </div>
+    }
+</section>
+
 <footer>
 
-  <mat-paginator [length]="contentLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
+  <mat-paginator (page)="handlePageEvent($event)" [length]="contentLength" [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions" aria-label="Select page">
   </mat-paginator>
 </footer>

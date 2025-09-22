@@ -5,25 +5,26 @@
     <button (click)="onSeeAll()" mat-button>See All</button>
   </div>
     @for(workout of workoutResponse; track workout.id) {
-      <mat-card appearance="outlined">
-        <mat-card-header>
-          <mat-card-title>{{workout.description}}</mat-card-title>
-          <mat-card-subtitle>{{workout.begining | date:'mediumDate'}}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <p>
-            {{ getDuration(workout.begining, workout.finish) }}
-          </p>
-          <p>
-            @for(exercise of workout.exercises; track exercise.name) {
-              {{ exerciseResume(exercise) }} <br>
-            }
-          </p>
-        </mat-card-content>
-        <mat-card-actions align="end">
-          <button mat-button (click)="onSeeMore(workout)">See More</button>
-        </mat-card-actions>
-      </mat-card>
+      <app-workout-card [workout]="workout"></app-workout-card>
+      <!-- <mat-card appearance="outlined"> -->
+      <!--   <mat-card-header> -->
+      <!--     <mat-card-title>{{workout.description}}</mat-card-title> -->
+      <!--     <mat-card-subtitle>{{workout.begining | date:'mediumDate'}}</mat-card-subtitle> -->
+      <!--   </mat-card-header> -->
+      <!--   <mat-card-content> -->
+      <!--     <p> -->
+      <!--       {{ getDuration(workout.begining, workout.finish) }} -->
+      <!--     </p> -->
+      <!--     <p> -->
+      <!--       @for(exercise of workout.exercises; track exercise.name) { -->
+      <!--         {{ exerciseResume(exercise) }} <br> -->
+      <!--       } -->
+      <!--     </p> -->
+      <!--   </mat-card-content> -->
+      <!--   <mat-card-actions align="end"> -->
+      <!--     <button mat-button (click)="onSeeMore(workout)">See More</button> -->
+      <!--   </mat-card-actions> -->
+      <!-- </mat-card> -->
     }
 </section>
 <div class="button-container">
