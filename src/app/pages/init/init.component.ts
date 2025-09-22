@@ -1,13 +1,13 @@
+import { DatePipe } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatCardModule } from '@angular/material/card'
-import { WorkoutHolderService, WorkoutService } from '../../services';
-import { ExerciseResponse, title, WorkoutResponse } from '../../core';
-import { MatListModule } from '@angular/material/list';
-import { DatePipe } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
 import { MatDialog } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { Router } from '@angular/router';
+import { ExerciseResponse, title, WorkoutResponse } from '../../core';
+import { WorkoutHolderService, WorkoutService } from '../../services';
 import { WorkoutDecriptionFormDialogComponent } from './workout-decription-form-dialog/workout-decription-form-dialog.component';
 
 @Component({
@@ -18,7 +18,6 @@ import { WorkoutDecriptionFormDialogComponent } from './workout-decription-form-
     MatListModule,
     MatCardModule,
     DatePipe,
-    RouterLink,
   ],
   templateUrl: './init.component.html',
   styleUrl: './init.component.css'

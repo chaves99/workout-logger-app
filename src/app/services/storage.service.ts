@@ -7,6 +7,13 @@ export class StorageService {
 
   private cookieService = inject(CookieService)
 
+  public constructor() {
+    if (navigator.storage && navigator.storage.persist) {
+      navigator.storage.persist()
+        .then(result => console.log(result));
+    }
+  }
+
   public save(key: StorageKey, value: string): void {
     this.cookieService.set(key, value);
   }
