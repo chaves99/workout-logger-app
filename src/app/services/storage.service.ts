@@ -5,7 +5,7 @@ import { LoginResponse, StorageKey } from '../core';
 @Injectable({ providedIn: 'root' })
 export class StorageService {
 
-  private cookieService = inject(CookieService)
+  private cookieService = inject(CookieService);
 
   public constructor() {
     if (navigator.storage && navigator.storage.persist) {
@@ -15,19 +15,27 @@ export class StorageService {
   }
 
   public save(key: StorageKey, value: string): void {
-    this.cookieService.set(key, value);
+    localStorage.setItem(key, value);
+    // this.cookieService.set(key, value);
   }
 
   public get(key: StorageKey): string {
-    return this.cookieService.get(key);
+    const value = localStorage.getItem(key);
+    if (value) return value;
+    return "";
+    // return this.cookieService.get(key);
   }
 
   public delete(key: StorageKey): void {
-    this.cookieService.delete(key);
+    localStorage.removeItem(key);
+    // this.cookieService.delete(key);
   }
 
   public getCurrentUser(): LoginResponse {
-    const loginResponseString = this.cookieService.get(StorageKey.LOGIN_RESPONSE);
+    // const loginResponseString = this.cookieService.get(StorageKey.LOGIN_RESPONSE);
+    // const loginResponse: LoginResponse = JSON.parse(loginResponseString);
+    // return loginResponse;
+    const loginResponseString = this.get(StorageKey.LOGIN_RESPONSE);
     const loginResponse: LoginResponse = JSON.parse(loginResponseString);
     return loginResponse;
   }
